@@ -1,8 +1,8 @@
 {
   "name": "loggerify",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Logging your application as config",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha --recursive tests/"
   },
@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/mocha": "^7.0.1",
+    "chai": "^4.2.0",
     "mocha": "^7.1.0"
   }
 }
