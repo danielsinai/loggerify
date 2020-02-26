@@ -1,0 +1,16 @@
+{
+  "name": "loggerify",
+  "version": "1.0.0",
+  "description": "Logging your application as config",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive tests/"
+  },
+  "repository": "https://github.com/danielsinai/loggerify.git",
+  "author": "Daniel Sinai",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^7.0.1",
+    "mocha": "^7.1.0"
+  }
+}
