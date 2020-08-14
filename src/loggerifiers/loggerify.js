@@ -1,6 +1,6 @@
 const logFeatures = require('../config/log-features')
 const logConfigs = require('../config/log-configs')
-const { handleWrapping, isConstructor, isObject, isFunction}  = require('./utils/index.js')
+const { handleWrapping, isConstructor, isObject, isFunction}  = require('./utils')
 const isConfigValid = require('../validators/config-validator');
 const loggerifyConstructor = require('./loggerify-constructor')
 const loggerifyObject = require('./loggerify-object')
