@@ -1,17 +1,17 @@
-module.exports = {
+module.exports = (mutatingObj) => ({
     error: {
         shouldLog: true,
         exceptions: [],
-        logFunction: console.error
+        logFunction: mutatingObj.error
     },
     start: {
         shouldLog: true,
         exceptions: [],
-        logFunction: console.info
+        logFunction: mutatingObj.start
     },
     end: {
         shouldLog: true,
         exceptions: [],
-        logFunction: console.info
+        logFunction: mutatingObj.end
     },
-}
+});
