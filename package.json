@@ -10,8 +10,22 @@
   "author": "Daniel Sinai",
   "license": "ISC",
   "devDependencies": {
-    "@types/mocha": "^7.0.1",
+    "@types/mocha": "5.0.0",
     "chai": "^4.2.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-fp": "^2.3.0",
     "mocha": "^7.1.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true
+    },
+    "plugins": [
+      "fp"
+    ],
+    "rules": {}
+  },
+  "dependencies": {
+    "@types/chai": "^4.2.11"
   }
 }
