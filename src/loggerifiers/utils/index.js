@@ -1,18 +1,27 @@
 const handleWrapping = (decorationFn, fn, loggerConfig, key) => {
     if (loggerConfig) {
-        const {shouldLog, exceptions, logFunction} = loggerConfig;    
+        const {shouldLog, exceptions, logFunction} = loggerConfig;
+
         const functionName = fn.name !== '' ? fn.name : key;
-        Object.defineProperty(fn, "name", { value: functionName })    
-    
         const shouldWrapFunction = shouldLog && exceptions && !exceptions.includes(key);
-        return shouldWrapFunction ? decorationFn(fn, logFunction) : fn;
-    } else {
-        return fn;
+        const decoratedFn = shouldWrapFunction ? decorationFn(fn, logFunction) : fn;
+
+        Object.defineProperty(decoratedFn, "name", {value: functionName})
+
+        return decoratedFn;
     }
+        return fn;
 }
 
 const isConstructor = (obj) => {
-    return !!obj.prototype && !!obj.prototype.constructor.name;
+    const isCtorClass = obj.constructor && obj.constructor.toString().substring(0, 5) === 'class'
+    if(obj.prototype === undefined) {
+        return isCtorClass
+    }
+    const isPrototypeCtorClass = obj.prototype.constructor
+        && obj.prototype.constructor.toString
+        && obj.prototype.constructor.toString().substring(0, 5) === 'class'
+    return isCtorClass || isPrototypeCtorClass
 }
 
 const isFunction = (obj) => {
