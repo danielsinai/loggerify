@@ -7,7 +7,7 @@ const loggerifyObject = require('./loggerify-object')
 const loggerifyFunction = require('./loggerify-function')
 const logWrappers = require('../wrappers/log-wrappers')
 
-const loggerify = (app, config) => {
+const loggerify = (config) => (app) => {
     if (!isConfigValid(config, logFeatures)) throw new Error(`Invalid configs, some of the config missed one of the following properties: ${logConfigs}`)
     const loggerifiersParams = [app, handleWrapping, logWrappers, logFeatures, config];
 

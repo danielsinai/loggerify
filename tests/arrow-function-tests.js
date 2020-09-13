@@ -15,8 +15,8 @@ describe("Testing arrow function loggerifying", () => {
             error: (message) => error = message
         };
         try {
-            loggerify(arrowFunc, config(mutator))();
-            loggerify(arrowFunctionWithError, config(mutator))();
+            loggerify(config(mutator))(arrowFunc)();
+            loggerify(config(mutator))(arrowFunctionWithError)();
         } catch (e) {
         }
     })

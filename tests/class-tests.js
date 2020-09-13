@@ -25,7 +25,7 @@ describe("Testing class methods loggerifying", () => {
             error: (message) => error = message
         };
 
-        const wrappedClass = loggerify(classTest, config(mutator));
+        const wrappedClass = loggerify(config(mutator))(classTest);
         const loggeredMethodsClass = new wrappedClass();
         try {
             loggeredMethodsClass.errorMethod();
