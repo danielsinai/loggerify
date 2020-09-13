@@ -1,6 +1,6 @@
 {
   "name": "loggerify",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Logging your application as config",
   "main": "src/index.js",
   "scripts": {
