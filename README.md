@@ -124,6 +124,10 @@ loggeredBark();
 $ npm install
 $ npm test
 ```
+## What's next?
+
+* Custom log message by using function name as key
+* Injecting custom log function to the function as parameter
 
 ## Contributing
 
